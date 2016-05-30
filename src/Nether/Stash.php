@@ -41,12 +41,14 @@ only ever exist once (e.g. singletons).
 	////////////////
 	////////////////
 
-	public function __construct() { return; }
+	public function
+	__construct() { return; }
 
 	////////////////
 	////////////////
 
-	static function Get($key) {
+	static function
+	Get($key) {
 	/*//
 	@argv string Key
 	@return mixed
@@ -54,10 +56,12 @@ only ever exist once (e.g. singletons).
 	//*/
 
 		if(self::Has($key)) return self::$Instances[$key];
-		else return false;
+		else return null;
 	}
 
-	static function Has($key) {
+	static function
+	Has($key):
+	Bool {
 	/*//
 	@argv string Key
 	@return boolean
@@ -68,7 +72,8 @@ only ever exist once (e.g. singletons).
 		else return false;
 	}
 
-	static function Set($key,$obj,$overwrite=false) {
+	static function
+	Set($key,$obj,$overwrite=false) {
 	/*//
 	@argv string Key, mixed Data, boolean Overwrite default false
 	@return mixed
@@ -85,7 +90,8 @@ only ever exist once (e.g. singletons).
 		return self::$Instances[$key] = $obj;
 	}
 
-	static function Destroy($key) {
+	static function
+	Destroy($key) {
 	/*//
 	@argv string Key
 	remove something from the stash. if the something is an object and the
